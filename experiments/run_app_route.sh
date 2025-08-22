@@ -19,7 +19,7 @@ PARALLEL=0  # Default to parallel execution. Set to 0 for single process.
 mkdir -p "$ROOT_DIR"
 LOG_FILE="${ROOT_DIR}/experiment_$(date +'%Y-%m-%d_%H-%M-%S').log"
 
-export HUGGINGFACE_TOKEN="[YOUR_TOKEN_HERE]"  # Set your Hugging Face token here
+export HUGGINGFACE_TOKEN="${HUGGINGFACE_TOKEN}" # Set your Hugging Face token here
 
 # Azure OpenAI configuration
 export AZURE_OPENAI_ENDPOINT="https://your-gpt-4o-deployment.openai.azure.com/"
