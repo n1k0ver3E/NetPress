@@ -13,7 +13,7 @@ PROMPT_TYPE="base"
 # Define the model and parallel mode parameters
 MODEL="Qwen/Qwen2.5-72B-Instruct"  # Replace with the model you want to use
 NUM_GPUS=4  # Number of GPUs to use for tensor parallelism. Only relevant for models running locally with VLLM.
-PARALLEL=0  # Default to parallel execution. Set to 0 for single process.
+PARALLEL=1  # Default to parallel execution. Set to 0 for single process.
 
 # Create a log file with a timestamp to avoid overwriting
 mkdir -p "$ROOT_DIR"
