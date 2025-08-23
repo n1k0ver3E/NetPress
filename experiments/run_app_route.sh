@@ -14,6 +14,7 @@ PROMPT_TYPE="base"
 MODEL="Qwen/Qwen2.5-72B-Instruct"  # Replace with the model you want to use
 NUM_GPUS=4  # Number of GPUs to use for tensor parallelism. Only relevant for models running locally with VLLM.
 PARALLEL=1  # Default to parallel execution. Set to 0 for single process.
+ENABLE_VLLM=0
 
 # Create a log file with a timestamp to avoid overwriting
 mkdir -p "$ROOT_DIR"
@@ -50,6 +51,7 @@ run_benchmark() {
         --benchmark_path "$BENCHMARK_PATH" \
         --prompt_type "$PROMPT_TYPE" \
         --num_gpus $NUM_GPUS \
+        --vllm $ENABLE_VLLM \
         --parallel "$PARALLEL" >> "$LOG_FILE" 2>&1 &
 }
 
