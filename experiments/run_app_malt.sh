@@ -44,9 +44,9 @@ run_experiment() {
     }
 
 # Define models and their configurations
-declare -A model_configs=(
-    ["Qwen2.5-72B-Instruct"]="level1 level2 level3:qwen_fewshot_semantic_50.jsonl"
-)
+  declare -A model_configs
+  model_configs["Qwen2.5-72B-Instruct"]="level1 level2 level3:qwen_fewshot_semantic_50.jsonl"
+
 
 # Define the desired order of execution
 model_order=("Qwen2.5-72B-Instruct")
