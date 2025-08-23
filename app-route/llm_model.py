@@ -49,9 +49,7 @@ class LLMModel:
     @staticmethod
     def model_list():
         return [
-            "Qwen/Qwen2.5-72B-Instruct",
-            "GPT-Agent",
-            "ReAct_Agent"
+            "Qwen/Qwen2.5-72B-Instruct"
         ]
 
     def __init__(self, model: str, max_new_tokens: int = 256, temperature: float = 0.1, device: str = "cuda", api_key: str = None, vllm: bool = True, prompt_type: str = "cot", num_gpus: int = 1):
