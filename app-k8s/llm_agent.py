@@ -52,7 +52,11 @@ class LLMAgent:
             self.llm_agent = ReAct_Agent(prompt_type=prompt_type)
         if llm_agent_type == "OpenRouter":
             from openrouter_agent import OpenRouterAgent
-            self.llm_agent = OpenRouterAgent(prompt_type=prompt_type)
+            if "OPENROUTER_MODEL" not in os.environ:
+                os.environ["OPENROUTER_MODEL"] = getpass.getpass("Enter your OpenRouter model name ")
+            else:
+                model_name = os.environ["OPENROUTER_MODEL"]
+            self.llm_agent = OpenRouterAgent(prompt_type=prompt_type, model_name=model_name)
         if llm_agent_type == "YourModel":
             # ====== TODO: Replace with your own model initialization if needed ======
             self.llm_agent = YourModel(prompt_type=prompt_type, num_gpus=num_gpus)
